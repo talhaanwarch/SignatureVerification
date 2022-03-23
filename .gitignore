@@ -1,0 +1,7 @@
+*pyc
+.env
+*.jpg
+*.png
+*.jpeg
+*.PNG
+!logo.png

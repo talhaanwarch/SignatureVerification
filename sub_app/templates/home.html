@@ -54,7 +54,9 @@
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Corso</a> -->
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index.html"></a>
+        <a class="navbar-brand logo-image" href="home.html">
+            <h2 class="custom-logo">PIAIC-ISL</h2>
+        </a>
 
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -161,12 +163,12 @@
                 <div class="form-group d-flex justify-content-center row">
                     <div class="col-lg-5 text-center" style="border-collapse: collapse;">
                         <h5 for="refrence-image" style="padding: 5px 0; color: white;">Refrence Image</h5>
-                        <span type="file" class="spanclass" style="margin-bottom: 5px;" id="refrence-image" name="refrence-image" >{{ form.ReferenceImage }}</span>
+                        <span type="file" class="file" style="margin-bottom: 5px;" id="refrence-image" name="refrence-image" >{{ form.ReferenceImage }}</span>
                         <h6><div class="help-block with-errors"></div></h6>
                     </div>
                     <div class="col-lg-5 text-center" style="border-collapse: collapse;">
                         <h5 for="questioned-image" style="padding: 5px 0; color: white;">Questioned Image</h5>
-                        <span type="file" style="margin-bottom: 5px;" id="questioned-image" name="questioned-image" class="spanclass">  {{ form.QuestionedImage }}</span> 
+                        <span type="file" style="margin-bottom: 5px;" id="questioned-image" name="questioned-image" class="file">  {{ form.QuestionedImage }}</span> 
                         <h6><div class="help-block with-errors"></div></h6>
                     </div>
                 </div>

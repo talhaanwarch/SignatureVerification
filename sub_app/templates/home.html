@@ -1,49 +1,505 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Landing page template built with HTML and Bootstrap 4 for presenting training courses, classes, workshops and for convincing visitors to register using the form.">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>Signatur Recognition With Siamese Network</title>
+    {% load static %}
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/fontawesome-all.css' %}" rel="stylesheet">
+    <link href="{% static 'css/swiper.css' %}" rel="stylesheet">
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+    <!-- Favicon  -->
+    <link rel="icon" href="{% static 'images/fav-icon.png' %}">
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+
+    <!-- Preloader -->
+    <div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
 
 
-<center><h3>Signature Verification</h3></center>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" >
 
-<div class='divform'>
-	<center><h4>Upload Images</h4></center>
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Corso</a> -->
 
-<div class="row justify-content-center" style="padding-top: 20px;">
-    <div class="col-md-8">
-<form action = "" method = "post" enctype="multipart/form-data">
-  {% csrf_token %}
-  <div class="row">
-      <div class="col-2">
-      	<label id="pic">Reference Image:</label>
-      </div>
-      <div class="col-2">
-        <p id="rpic" class="">{{ form.ReferenceImage }} </p>
-      </div>
-</div>
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="index.html"></a>
 
- <div class="row">
-      <div class="col-2">
-        <label id="pic">Questioned Image:</label>
-      </div>
-      <div class="col-2">
-        <p id="qpic" class="">{{ form.QuestionedImage }} </p>
-      </div>
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
 
-  </div>
+        <div class="collapse navbar-collapse text-center" id="navbarsExampleDefault" >
+            <ul class="navbar-nav" style="margin: auto; font-size: 32px;">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#register">START<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#team">TEAM</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#presentation">PRESENTATION</a>
+                </li>
+                
 
-  
+               
 
-  <input type="submit" value="Submit"  class="btn btn-success">
-</form>
-</div>
-</div>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#contact">CONTACT</a>
+                </li>
+            </ul>
+           
+        </div>
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-container">
+                        <h1>دستخط شناس</h1>
+                        <p class="p-large">Signature Verification With Siamese Network</p>
+                        <a class="btn-solid-lg page-scroll" href="#register">Verify Signature</a>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+
+        <!-- Image Slider -->
+        <div class="outer-container">
+            <div class="slider-container">
+                <div class="swiper-container image-slider-1">
+                    <div class="swiper-wrapper">
+
+                        <!-- Slide -->
+                        <div class="swiper-slide">
+                            <img class="img-fluid" src="{% static 'images/slider-image-1.png' %}" alt="alternative">
+                        </div>
+                        <!-- end of slide -->
+
+                        <!-- Slide -->
+                        <div class="swiper-slide">
+                            <img class="img-fluid" src="{% static 'images/slider-image-2.png' %}" alt="alternative">
+                        </div>
+                        <!-- end of slide -->
+
+                        <!-- Slide -->
+                        <div class="swiper-slide">
+                            <img class="img-fluid" src="{% static 'images/slider-image-3.png' %}" alt="alternative">
+                        </div>
+                        <!-- end of slide -->
+
+                        <!-- Slide -->
+                        <div class="swiper-slide">
+                            <img class="img-fluid" src="{% static 'images/slider-image-4.png' %}" alt="alternative">
+                        </div>
+                        <!-- end of slide -->
+
+                    </div> <!-- end of swiper-wrapper -->
+
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- end of add arrows -->
+
+                </div> <!-- end of swiper-container -->
+            </div> <!-- end of slider-container -->
+        </div> <!-- end of outer-container -->
+        <!-- end of image slider -->
+
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+
+    <!-- Image Upload Form -->
+    <div id="register" class="form-1 d-flex justify-content-center">
+        <!-- Registration Form -->
+     
+        <div class="form-container col-lg-6">
+            <h5 style="color: #fff;"> Upload Reference Image and Image to be tested</h5>
+
+            <form action = "" method = "post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group d-flex justify-content-center row">
+                    <div class="col-lg-5 text-center" style="border-collapse: collapse;">
+                        <h5 for="refrence-image" style="padding: 5px 0; color: white;">Refrence Image</h5>
+                        <span type="file" class="spanclass" style="margin-bottom: 5px;" id="refrence-image" name="refrence-image" >{{ form.ReferenceImage }}</span>
+                        <h6><div class="help-block with-errors"></div></h6>
+                    </div>
+                    <div class="col-lg-5 text-center" style="border-collapse: collapse;">
+                        <h5 for="questioned-image" style="padding: 5px 0; color: white;">Questioned Image</h5>
+                        <span type="file" style="margin-bottom: 5px;" id="questioned-image" name="questioned-image" class="spanclass">  {{ form.QuestionedImage }}</span> 
+                        <h6><div class="help-block with-errors"></div></h6>
+                    </div>
+                </div>
+                
+                <div class="d-flex justify-content-center" >
+                    <input type="submit" class="form-control-submit-button" value="Submit">
+                    <!-- <button type="submit" class="form-control-submit-button">SUBMIT</button> -->
+                </div>
+                <div class="form-message" style="margin-top: 10px;">
+                    <div id="rmsgSubmit" class="h3 text-center hidden"></div>
+                </div>
+            </form>
+
+        </div> <!-- end of form-container -->
+        <!-- end of registration form -->
+
+    </div> <!-- end of col -->
+    </div> <!-- end of form-1 -->
+    <!-- end of registration -->
+
+    
+    
+ 
 
 {% if pred == "None" %}
 {% else %}
-<h3> Similarity is {{ pred }} </h3>
-<img src="{{ refpath }}" ,width="500" height="400">
-<img src="{{ quespath }}" ,width="500" height="400">
+    <h3> <center>Signatures is {{ pred }}</center> </h3>
 
-{% endif %}
+    <div style="padding-top: 15px; background-color: #f0efed;">
+        <div class="container">
+            <div class="d-flex justify-content-center justify-content-around row">
+                <div class="col-lg-5 text-center" >
+                    <h3> Reference Image </h3>
+                    <img style="margin-bottom: 20px; border: 2px solid black;" class="img-fluid" src="{{ refpath }}" alt="alternative">
+                </div> <!-- end of col -->
+                <div class="col-lg-5 text-center">
+                    <h3> Questioned Image </h3>
+                    <img style="margin-bottom: 20px; border: 2px solid black;" class="img-fluid" src="{{ quespath }}" alt="alternative">
+                </div>
+            </div>
+        </div>
+    </div>
+ {% endif %}
 
-{% endblock %}
+
+
+    <!-- Team -->
+    <div id="team" class="basic-1">
+        <div class="container">
+            <h2 class="text-center">Our Team</h2>
+            <div class="row">
+                <div class="col-lg-3 text-center">
+                    <img class="img-fluid" src="{% static 'images/male-avatar.png' %}" alt="alternative">
+                    <h3>Talha</h3>
+                </div> <!-- end of col -->
+                <div class="col-lg-3 text-center">
+                    <img class="img-fluid" src="{% static 'images/male-avatar.png' %}" alt="alternative">
+                    <h3>Ahtisham</h3>
+                </div>
+                <div class="col-lg-3 text-center">
+                    <img class="img-fluid" src="{% static 'images/female-avatar.jpg' %}" alt="alternative">
+                    <h3>Aisha</h3>
+                </div> <!-- end of col -->
+                <div class="col-lg-3 text-center">
+                    <img class="img-fluid" src="{% static 'images/female-avatar.jpg' %}" alt="alternative">
+                    <h3>Semab</h3>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->  
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of instructor -->
+
+
+    
+
+
+    
+
+
+    <!-- Video -->
+    <div id="presentation" class="basic-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Video Presentation</h2>
+
+                    <!-- Video Preview -->
+                    <div class="image-container">
+                        <div class="video-wrapper">
+                            <a class="popup-youtube" href=""
+                                data-effect="fadeIn">
+                                <img class="img-fluid" src="{% static 'images/image-video.png' %}" >
+                                <span class="video-play-button">
+                                    <span></span>
+                                </span>
+                            </a>
+                        </div> <!-- end of video-wrapper -->
+                    </div> <!-- end of image-container -->
+                    <!-- end of video preview -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-4 -->
+    <!-- end of video -->
+
+
+    <!-- Takeaways -->
+    <div class="cards">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 style="color: #fff;">Salient Features</h2>
+                    <p style="color: #fff; class="p-heading">Here are some of prominent features our proposed AI based signature verification system <strong>Dastakhat Shanas </strong>
+                    </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">MultiLingual</h4>
+                            <p>The system can verify signature in multiple languages such as English, Hindi,Bengali, Dutch and Chinese</p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Efficient</h4>
+                            <p>Dastakhat Shanas is efficient enough to verify signature within seconds with limited computational resources (1 core CPU and 512 MB ram)</p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <i class="fab fa-github" style="font-size: 3rem;line-height: 6rem; color: #992fe0;"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Open Source</h4>
+                            <p>Dastakhat Shanas is an open source system with code and pretrained models publically available for reuse and modifications</p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards -->
+    <!-- end of takeaways -->
+
+
+    <!-- Contact -->
+    <div id="contact" class="form-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h2>Contact Details</h2>
+                        <p>Get in touch using the contact details below. For any
+                            questions use the form.</p>
+                        <h3>Location</h3>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="media-body">Islamabad, Pakistan</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-mobile-alt"></i>
+                                <div class="media-body">+92 331 9709944, &nbsp;&nbsp;<i
+                                        class="fas fa-mobile-alt"></i>&nbsp; +92 314 5731158</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-envelope"></i>
+                                <div class="media-body"><a class="light-gray"
+                                        href="mailto:contact@zigo.com">contact@email.com</a> <i
+                                        class="fas fa-globe"></i><a class="light-gray"
+                                        href="#your-link">www.piaic-isl.com</a></div>
+                            </li>
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+
+                    <!-- Contact Form -->
+                    <form id="contactForm" data-toggle="validator" data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="cname" required>
+                            <label class="label-control" for="cname">Name</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-input" id="cemail" required>
+                            <label class="label-control" for="cemail">Email</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
+                            <label class="label-control" for="cmessage">Your message</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- <div class="form-group checkbox">
+                            <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>I have read and agree to
+                            Corso's stated <a href="privacy-policy.html">Privacy Policy</a> and <a
+                                href="terms-conditions.html">Terms Conditions</a>
+                            <div class="help-block with-errors"></div>
+                        </div> -->
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">SUBMIT</button>
+                        </div>
+                        <div class="form-message">
+                            <div id="cmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>
+                    </form>
+                    <!-- end of contact form -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form-3 -->
+    <!-- end of contact -->
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-col first">
+                        <h5>About PIAIC-ISL</h5>
+                        <p class="p-small">We're passionate about creating soultions for real world problems using Artificial Intelligence.</p>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col second">
+                        <h5>Links</h5>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body"><a href="#register">Model</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body"><a href="#team">Team</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body"><a href="#presentation">Presentation</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- end of col -->
+                <!-- <div class="col-md-3">
+                    <div class="footer-col third">
+                        <h5>Links</h5>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body"><a href="article-details.html">Article Details</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col fourth">
+                        <h5>Social Media</h5>
+                        <p class="p-small">For news & updates follow us</p>
+                        <a href="#your-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#your-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <!-- <a href="#your-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a> -->
+                        <a href="#your-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © 2022 <a href="">PIAIC-ISL</a> - All Rights
+                        Reserved</p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+
+
+    <!-- Scripts -->
+    <script src="{% static 'js/jquery.min.js' %}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="{% static 'js/popper.min.js' %}"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="{% static 'js/jquery.countdown.min.js' %}"></script> <!-- The Final Countdown plugin for jQuery -->
+    <script src="{% static 'js/swiper.min.js' %}"></script> <!-- Swiper for image and text sliders -->
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="{% static 'js/validator.min.js' %}"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="{% static 'js/scripts.js' %}"></script> <!-- Custom scripts -->
+</body>
+
+</html>

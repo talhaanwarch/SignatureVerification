@@ -28,6 +28,7 @@ def home(request):
 				
 				dist=getdist(refpath,quespath)
 				print('dist',dist)
+				dist='Forged' if dist > 0.83 else 'Genuine'
 			return render(request,'home.html',{'form':form,'pred':dist,'refpath':refpath,
 				'quespath':quespath,})
 	else:

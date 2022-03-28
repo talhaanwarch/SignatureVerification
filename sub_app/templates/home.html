@@ -7,8 +7,7 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Landing page template built with HTML and Bootstrap 4 for presenting training courses, classes, workshops and for convincing visitors to register using the form.">
-    <meta name="author" content="Inovatik">
+        content="Verify whether the signature is real or forged using AI" content="Inovatik">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
     <meta property="og:site_name" content="" /> <!-- website name -->
@@ -20,7 +19,7 @@
     <meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>Signatur Recognition With Siamese Network</title>
+    <title>Signature Recognition With Siamese Network</title>
     {% load static %}
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
@@ -55,7 +54,7 @@
 
         <!-- Image Logo -->
         <a class="navbar-brand logo-image" href="home.html">
-            <h2 class="custom-logo">PIAIC-ISL</h2>
+            <h2 class="custom-logo">دستخط شناس</h2>
         </a>
 
         <!-- Mobile Menu Toggle Button -->
@@ -67,9 +66,9 @@
         <!-- end of mobile menu toggle button -->
 
         <div class="collapse navbar-collapse text-center" id="navbarsExampleDefault" >
-            <ul class="navbar-nav" style="margin: auto; font-size: 32px;">
+            <ul class="navbar-nav" style="margin-left: auto; font-size: 24px;">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#register">START<span class="sr-only">(current)</span></a>
+                    <a class="nav-link page-scroll" href="#register">VERIFY<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#team">TEAM</a>
@@ -90,6 +89,10 @@
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
 
+<!-- Anchor the results -->
+
+<!-- Anchor the results -->
+    
 
     <!-- Header -->
     <header id="header" class="header">
@@ -98,7 +101,7 @@
                 <div class="col-lg-12">
                     <div class="text-container">
                         <h1>دستخط شناس</h1>
-                        <p class="p-large">Signature Verification With Siamese Network</p>
+                        <p class="p-large">Signature Verification using Artificial Intelligence</p>
                         <a class="btn-solid-lg page-scroll" href="#register">Verify Signature</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
@@ -156,7 +159,7 @@
         <!-- Registration Form -->
      
         <div class="form-container col-lg-6">
-            <h5 style="color: #fff;"> Upload Reference Image and Image to be tested</h5>
+            <h5 style="color: #fff;"> <center>Upload Reference Image and Image to be tested</center></h5>
 
             <form action = "" method = "post" enctype="multipart/form-data">
                 {% csrf_token %}
@@ -192,9 +195,10 @@
     
     
  
-
+<div id="results">
 {% if pred == "None" %}
 {% else %}
+
     <h3> <center>Signatures is {{ pred }}</center> </h3>
 
     <div style="padding-top: 15px; background-color: #f0efed;">
@@ -202,51 +206,20 @@
             <div class="d-flex justify-content-center justify-content-around row">
                 <div class="col-lg-5 text-center" >
                     <h3> Reference Image </h3>
-                    <img style="margin-bottom: 20px; border: 2px solid black;" class="img-fluid" src="{{ refpath }}" alt="alternative">
+                    <img style="margin-bottom: 20px; border: 2px solid black;" class="img-fluid" src="{{ refpath }}" width="300" height="400" alt="alternative">
                 </div> <!-- end of col -->
                 <div class="col-lg-5 text-center">
                     <h3> Questioned Image </h3>
-                    <img style="margin-bottom: 20px; border: 2px solid black;" class="img-fluid" src="{{ quespath }}" alt="alternative">
+                    <img style="margin-bottom: 20px; border: 2px solid black;" class="img-fluid" src="{{ quespath }}" width="300" height="400" alt="alternative">
                 </div>
             </div>
         </div>
     </div>
  {% endif %}
-
-
-
-    <!-- Team -->
-    <div id="team" class="basic-1">
-        <div class="container">
-            <h2 class="text-center">Our Team</h2>
-            <div class="row">
-                <div class="col-lg-3 text-center">
-                    <img class="img-fluid" src="{% static 'images/male-avatar.png' %}" alt="alternative">
-                    <h3>Talha</h3>
-                </div> <!-- end of col -->
-                <div class="col-lg-3 text-center">
-                    <img class="img-fluid" src="{% static 'images/male-avatar.png' %}" alt="alternative">
-                    <h3>Ahtisham</h3>
-                </div>
-                <div class="col-lg-3 text-center">
-                    <img class="img-fluid" src="{% static 'images/female-avatar.jpg' %}" alt="alternative">
-                    <h3>Aisha</h3>
-                </div> <!-- end of col -->
-                <div class="col-lg-3 text-center">
-                    <img class="img-fluid" src="{% static 'images/female-avatar.jpg' %}" alt="alternative">
-                    <h3>Semab</h3>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->  
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-1 -->
-    <!-- end of instructor -->
+</div>
 
 
     
-
-
-    
-
 
     <!-- Video -->
     <div id="presentation" class="basic-4">
@@ -276,13 +249,13 @@
     <!-- end of video -->
 
 
-    <!-- Takeaways -->
+    <!-- Features -->
     <div class="cards">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <h2 style="color: #fff;">Salient Features</h2>
-                    <p style="color: #fff; class="p-heading">Here are some of prominent features our proposed AI based signature verification system <strong>Dastakhat Shanas </strong>
+                    <p style="color: #fff; class="p-heading">Here are some of prominent features our proposed AI based signature verification system <strong>دستخط شناس </strong>
                     </p>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -296,7 +269,7 @@
                         </div>
                         <div class="card-body">
                             <h4 class="card-title">MultiLingual</h4>
-                            <p>The system can verify signature in multiple languages such as English, Hindi,Bengali, Dutch and Chinese</p>
+                            <p>دستخط شناس can verify signature in multiple languages such as English, Hindi,Bengali, Dutch and Chinese</p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -308,7 +281,7 @@
                         </div>
                         <div class="card-body">
                             <h4 class="card-title">Efficient</h4>
-                            <p>Dastakhat Shanas is efficient enough to verify signature within seconds with limited computational resources (1 core CPU and 512 MB ram)</p>
+                            <p>دستخط شناس is efficient enough to verify signature within seconds with limited computational resources (1 core CPU and 512 MB ram)</p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -321,7 +294,7 @@
                         </div>
                         <div class="card-body">
                             <h4 class="card-title">Open Source</h4>
-                            <p>Dastakhat Shanas is an open source system with code and pretrained models publically available for reuse and modifications</p>
+                            <p>دستخط شناس is an open source system with code and pretrained models publically available for reuse and modifications</p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -333,6 +306,68 @@
         </div> <!-- end of container -->
     </div> <!-- end of cards -->
     <!-- end of takeaways -->
+
+
+
+<div id="team" class="basic-1">
+<div class="container">
+    <h2 class="text-center">Our Team</h2>
+    <div class="row">
+
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <div class="pic"><img src="{% static 'images/male-avatar.png' %}" alt=""></div>
+                <h3 class="title">Talha</h3>
+                <span class="post"></span>
+                <ul class="icon">
+                    <li><a href="#" class="fab fa-linkedin-in"></a></li>
+                    <li><a href="#" class="fab fa-github"></a></li>
+                    <li><a href="#" class="fas fa-envelope"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <div class="pic"><img src="{% static 'images/male-avatar.png' %}" alt=""></div>
+                <h3 class="title">Ahtisham</h3>
+                <span class="post"></span>
+                <ul class="icon">
+                    <li><a href="#" class="fab fa-linkedin-in"></a></li>
+                    <li><a href="#" class="fab fa-github"></a></li>
+                    <li><a href="#" class="fas fa-envelope"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <div class="pic"><img src="{% static 'images/female-avatar.jpg' %}" alt=""></div>
+                <h3 class="title">Aisha</h3>
+                <span class="post"></span>
+                <ul class="icon">
+                    <li><a href="#" class="fab fa-linkedin-in"></a></li>
+                    <li><a href="#" class="fab fa-github"></a></li>
+                    <li><a href="#" class="fas fa-envelope"></a></li>
+                </ul>
+            </div>
+        </div>
+ 
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <div class="pic"><img src="{% static 'images/female-avatar.jpg' %}" alt=""></div>
+                <h3 class="title">Seemab</h3>
+                <span class="post"></span>
+                <ul class="icon">
+                    <li><a href="#" class="fab fa-linkedin-in"></a></li>
+                    <li><a href="#" class="fab fa-github"></a></li>
+                    <li><a href="#" class="fas fa-envelope"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
 
     <!-- Contact -->
@@ -350,17 +385,16 @@
                                 <i class="fas fa-map-marker-alt"></i>
                                 <div class="media-body">Islamabad, Pakistan</div>
                             </li>
-                            <li class="media">
+                            <!-- <li class="media">
                                 <i class="fas fa-mobile-alt"></i>
                                 <div class="media-body">+92 331 9709944, &nbsp;&nbsp;<i
                                         class="fas fa-mobile-alt"></i>&nbsp; +92 314 5731158</div>
-                            </li>
+                            </li> -->
                             <li class="media">
                                 <i class="fas fa-envelope"></i>
                                 <div class="media-body"><a class="light-gray"
-                                        href="mailto:contact@zigo.com">contact@email.com</a> <i
-                                        class="fas fa-globe"></i><a class="light-gray"
-                                        href="#your-link">www.piaic-isl.com</a></div>
+                                        href="chtalhaanwar@gmail.com">chtalhaanwar@gmail.com</a> </i>
+                                        </div>
                             </li>
                         </ul>
                     </div> <!-- end of text-container -->

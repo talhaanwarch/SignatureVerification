@@ -681,14 +681,13 @@ input[type='checkbox'] {
   /* Set the background size and repeat properties. */
   background-size: 100%;
   background-repeat: repeat;
-padding-left: 4px;
-padding-right: 4px;
+
   /* Use the text as a mask for the background. */
   /* This will show the gradient as a text color rather than element bg. */
-  /* -webkit-background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-background-clip: text;
-  -moz-text-fill-color: transparent; */
+  -moz-text-fill-color: transparent;
 }
 
 .custom-logo:hover {
@@ -703,10 +702,10 @@ padding-right: 4px;
 
   /* Use the text as a mask for the background. */
   /* This will show the gradient as a text color rather than element bg. */
-  /* -webkit-background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-background-clip: text;
-  -moz-text-fill-color: transparent; */
+  -moz-text-fill-color: transparent;
 }
 
 

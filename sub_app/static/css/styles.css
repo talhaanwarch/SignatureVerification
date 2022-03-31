@@ -248,27 +248,26 @@ a:hover {
 	color: #000;
 } */
 
-.file {
+.file input {
 	color: transparent;
 	width: 100%;
 }
 
-.file  {
+.file input {
 	background-color: transparent;
 	border: 2px solid white;
 	border-radius: 4px;
 	color: white;
 	cursor: pointer;
 	font-size: 12px;
-	font-weight: bold;
 	outline: none;
-	padding: 10px 0px;
+	padding: 1px 0px;
 	text-transform: uppercase;
 	transition: all 1s ease;
 	width: 100%;
 }
 
-.file:hover {
+.file input {
 	background: #fff;
 	border: 2px solid black;
 	color: #000;
@@ -686,10 +685,10 @@ input[type='checkbox'] {
 
   /* Use the text as a mask for the background. */
   /* This will show the gradient as a text color rather than element bg. */
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
+  -moz-text-fill-color: transparent; */
 }
 
 .custom-logo:hover {
@@ -704,10 +703,10 @@ input[type='checkbox'] {
 
   /* Use the text as a mask for the background. */
   /* This will show the gradient as a text color rather than element bg. */
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
+  -moz-text-fill-color: transparent; */
 }
 
 
@@ -1904,6 +1903,10 @@ a:hover.back-to-top {
 	.navbar-custom.top-nav-collapse .nav-item .nav-link:hover,
 	.navbar-custom.top-nav-collapse .nav-item .nav-link.active {
 		color: #992fe0;
+	}
+
+	.nav-link.active{
+		color: #222;
 	}
 
 	.navbar-custom .dropdown-menu {

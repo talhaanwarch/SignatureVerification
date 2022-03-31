@@ -71,7 +71,6 @@ h1 {
 }
 
 h2 {
-	color: #333;
 	font: 700 2.25rem/2.875rem "Montserrat", sans-serif;
 }
 
@@ -115,7 +114,7 @@ h6 {
 
 a {
 	color: #555;
-	text-decoration: underline;
+	/* text-decoration: underline; */
 }
 
 a:hover {
@@ -682,7 +681,8 @@ input[type='checkbox'] {
   /* Set the background size and repeat properties. */
   background-size: 100%;
   background-repeat: repeat;
-
+padding-left: 4px;
+padding-right: 4px;
   /* Use the text as a mask for the background. */
   /* This will show the gradient as a text color rather than element bg. */
   /* -webkit-background-clip: text;

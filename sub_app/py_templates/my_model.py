@@ -3,11 +3,15 @@ import numpy as np
 import onnxruntime
 import os
 import cv2
+from statistics import mode
+
+
 image_path=os.path.dirname(os.path.dirname(__file__))
-ort_session = onnxruntime.InferenceSession('sub_app/py_templates/siamesemodel.onnx')
+ort_session1 = onnxruntime.InferenceSession('sub_app/py_templates/efficientnet_lite0.onnx')
+ort_session2 = onnxruntime.InferenceSession('sub_app/py_templates/mobilenetv3_rw.onnx')
+ort_session3 = onnxruntime.InferenceSession('sub_app/py_templates/mobilenetv2_100.onnx')
 
 def getimg(test_path):
-    print('test_path',test_path)
     img = Image.open(image_path+test_path).convert('L')
     img=img.resize((224,224))
     img=np.array(img)
@@ -30,7 +34,7 @@ def minkowski_distance(x, y, p_value=2):
             for a, b in zip(x, y)), p_value))
 
 
-def getembs(img1,img2):
+def getembs(img1,img2,ort_session):
     inp1 = {ort_session.get_inputs()[0].name: img1}
     emb1= ort_session.run(None, inp1)[0]
     inp2 = {ort_session.get_inputs()[0].name: img2}
@@ -38,11 +42,21 @@ def getembs(img1,img2):
     
     return emb1.ravel(),emb2.ravel()
 
-def getdist(p1,p2):
+def getdist(p1,p2,ort_session):
     img1=getimg(p1)
     img2=getimg(p2)
-
-    emb1o,emb2o=getembs(img1,img2)
-
+    emb1o,emb2o=getembs(img1,img2,ort_session)
     r=minkowski_distance(emb1o,emb2o)
+    return r
+
+def get_ensemble_results(p1,p2,thresh=0.6):
+    r1=getdist(p1,p2,ort_session1)
+    r2=getdist(p1,p2,ort_session2)
+    r3=getdist(p1,p2,ort_session3)
+    print(r1,r2,r3)
+    r1='Forged' if r1 > thresh else 'Genuine'
+    r2='Forged' if r2 > thresh else 'Genuine'
+    r3='Forged' if r3 > thresh else 'Genuine'
+    print(r1,r2,r3)
+    r=mode([r1,r2,r3])
     return r

@@ -1,2 +1,2 @@
 # Signature Verification using Siamese Network  
-This project is part of [UBL datathon](https://ubldatathon.com/)  
+For detail please vieo the presentation or the [website](https://piaic.herokuapp.com/)
